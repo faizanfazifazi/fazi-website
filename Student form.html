@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="form.css">
+    <!--Faizan/013-->
+</head>
+<body>
+    <div class="container" id="container">
+        <strong>
+        <p style="font-size: 40px;">Student Registration Form</p>
+        <P style="font-size: 20px;">Fill out the form carefully for registration</P>
+        <br>
+        <p style="font-size: 18px;">Student Name</p>
+        <form id="applicationForm">
+            <div class="form-group flex-container">
+                <div class="flex-item">
+                    <label for="firstName">First Name <span class="required">*</span>:</label>
+                    <input type="text" id="firstName" name="firstName" maxlength="20" required>
+                    <span class="error" id="firstNameError"></span>
+                </div>
+                <div class="flex-item">
+                    <label for="middleName">Middle Name:</label>
+                    <input type="text" id="middleName" name="middleName" maxlength="20">
+                    <span class="error" id="middleNameError"></span>
+                </div>
+                <div class="flex-item">
+                    <label for="lastName">Last Name <span class="required">*</span>:</label>
+                    <input type="text" id="lastName" name="lastName" maxlength="20" required>
+                    <span class="error" id="lastNameError"></span>
+                </div>
+            </div>
+            <div class="form-group flex-container">
+                <div class="flex-item">
+                    <label for="birthDate">Birth Date <span class="required">*</span>:</label>
+                    <input type="date" id="birthDate" name="birthDate" required>
+                    <span class="error" id="birthDateError"></span>
+                </div>
+
+            <div class="flex-item">
+                <label for="gender">Gender <span class="required">*</span>:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <span class="error" id="genderError"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address">Address <span class="required">*</span>:</label>
+            <textarea id="address" name="address" maxlength="250" required></textarea>
+            <span class="error" id="addressError"></span>
+        </div>
+        <div class="form-group flex-container">
+            <div class="flex-item">
+                <label for="city">City <span class="required">*</span>:</label>
+                <input type="text" id="city" name="city" maxlength="50" required>
+                <span class="error" id="cityError"></span>
+            </div>
+            <div class="flex-item">
+                <label for="state">State <span class="required">*</span>:</label>
+                <input type="text" id="state" name="state" maxlength="50" required>
+                <span class="error" id="stateError"></span>
+            </div>
+            <div class="flex-item">
+                <label for="postalCode">Postal Code <span class="required">*</span>:</label>
+                <input type="text" id="postalCode" name="postalCode" maxlength="5" required>
+                <span class="error" id="postalCodeError"></span>
+            </div>
+        </div>
+        
+        <div class="form-group flex-container">
+            <div class="flex-item">
+                <label for="email">Email <span class="required">*</span>:</label>
+                <input placeholder="ex: name@example.com" type="email" id="email" name="email" maxlength="250" required>
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="flex-item">
+                <label for="mobileNumber">Mobile Number <span class="required">*</span>:</label>
+                <input placeholder="(000) 000-00000" type="text" id="mobileNumber" name="mobileNumber" maxlength="12" required>
+                <span class="error" id="mobileNumberError"></span>
+            </div>
+        </div>
+        
+        <div class="form-group flex-container">
+            <div class="flex-item">
+                <label for="phoneNumber">Phone Number:</label>
+                <input placeholder="(000) 000-00000" type="text" id="phoneNumber" name="phoneNumber" maxlength="12">
+                <span class="error" id="phoneNumberError"></span>
+            </div>
+            <div class="flex-item">
+                <label for="workNumber">Work Number:</label>
+                <input placeholder="(000) 000-00000" type="text" id="workNumber" name="workNumber" maxlength="12">
+                <span class="error" id="workNumberError"></span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="company">Company <span class="required">*</span>:</label>
+            <input type="text" id="company" name="company" maxlength="150" required>
+            <span class="error" id="companyError"></span>
+        </div>
+        <div class="form-group">
+            <label for="courses">Courses <span class="required">*</span>:</label>
+            <select id="courses" name="courses" required>
+                <option value="">Select</option>
+                <option value="Bs CS">Bs Cs</option>
+                <option value="Bs Eng">Bs Eng</option>
+                <option value="Bs Dfcs">Bs Dfcs</option>
+                <option value="Bs Urdu">Bs Urdu</option>
+                <option value="Bs Maths">Bs Maths</option>
+                <option value="Bs IT">Bs IT</option>
+                <option value="Bs SE">Bs SE</option>
+                <option value="Bs Mas Com">Bs Mas Com</option>
+                <option value="BBA">BBA</option>
+                <option value="Bs Physics">Bs Physics</option></select>
+            <span class="error" id="coursesError"></span>
+        </div>
+        <div class="form-group">
+            <label for="additionalComments">Additional Comments (Max 500 characters):</label>
+            <textarea id="additionalComments" name="additionalComments" maxlength="500"></textarea>
+            <span class="error" id="additionalCommentsError"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="submitBtn">Submit</button>
+            <button type="button" id="clearBtn">Clear</button>
+        </div>
+    </form>
+</div>
+</strong>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazi Bakers</title>
+    <!--Faizan/013-->
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: #ffcc00;
+            margin-right: 20px;
+        }
+
+        .logo-search {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .banner {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJctM0yiWEfpVT1GGCinEAV0DM_bQPe8pfFgfGhOvWA&s');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .banner h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .product {
+            width: 30%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product .info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            color: #666;
+        }
+
+        .collection {
+            background-image: url('https://www.shutterstock.com/image-photo/bakery-various-kinds-breadstuff-bread-600nw-1979748128.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: left;
+            color: aliceblue;
+            font-weight: bold; 
+        }
+
+        .collection h3 button {
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .collection h3 button:hover {
+            background-color: #e6b800;
+        }
+
+        .collection h3 {
+            text-align: left;
+            margin-bottom: 30px;
+            font-size: xx-large;
+        }
+
+        .order-now {
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold; 
+           cursor: pointer;
+            border-radius: 5px;
+           transition: background-color 0.3s;
+        }
+
+       .order-now:hover {
+           background-color: #e6b800;
+        }
+
+       .newsletter {
+           text-align: center;
+           margin: 50px 0;
+        }
+
+        .newsletter h3 {
+          font-weight: bold;
+          font-size: 50px;
+        }
+
+        .newsletter button {
+          background-color: #ffcc00;
+          color: #333;
+          border: none;
+          padding: 10px 20px;
+          font-size: 20px;
+          font-weight: bold;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+          background-color: #e6b800;
+        }
+
+        .newsletter {
+          text-align: center;
+          margin: 5px 0;
+          background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMR99ba1cHXIWDvuPVsTolXvXT7yaS09joTI53zsPjfA&s');
+          background-size: cover;
+          background-position: center;
+         padding: 100px 0; 
+        }
+
+        .testimonials {
+           text-align: center;
+           margin: 50px 0;
+        }
+
+        .testimonials h2 {
+          color: red;
+          font-weight: bold;
+}
+
+.testimonials p {
+    text-align: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+        footer {
+            background: url('https://t4.ftcdn.net/jpg/05/84/74/47/360_F_584744763_hFn8xuDDCiK6nTFdbjAND5zE2NKSZJzJ.jpg') center/cover no-repeat; 
+             padding: 50px 0;
+             text-align: center;
+             color: black;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Fazi <span>Bakers</span></h1>
+            </div>
+            <div class="contact-info">
+                <p style="font-size: 8px;">For Delivery: +92 3218895366</p>
+                
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" button class="dropbtn">Products  &#9662; </button></a>
+                       
+
+                        <div class="dropdown-content">
+                            <a href="#">Sweets</a>
+                            <a href="#">Namkeen</a>
+                            <a href="#">Cakes</a>
+                            <a href="#">Chocolates</a>
+                            <a href="#">Dry Fruits</a>
+                            <a href="#">Fruits</a>
+                            <a href="#">Gulab Jamun</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Famous Food</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="banner">
+        <h2>Welcome to Our Bakery</h2>
+        <p>Delicious and fresh baked goods for every occasion</p>
+    </section>
+    <h2 style="font-size: 50px; font-style: italic;text-align: center; color: red;">Product Categories</h2> <br>
+    <div class="container">
+      
+
+      <div class="products">
+          <div class="product">
+            
+            
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScBDzpnPgVunxuR5ujSbiDFmyU64W_SRU8RZ4UYB42QQ&s" alt="Product 1">
+              <div class="info">
+                  <h3>Sweets</h3>
+                  <p> Delicious and fluffy cupcakes, perfect for satisfying your sweet cravings.</p>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+          <div class="product">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiULfPdjsRlvKI1B4bJa866T5HhyGs2ZzxenFdWj07Ag&s" alt="Product 2">
+              <div class="info">
+                  <h3>Namkeen</h3>
+                  <p>A variety of savory snacks, such as samosas, pakoras, and chaat, ideal for a quick and tasty treat.</p>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+          <div class="product">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNmh4BWm7VW4wELgKmsHtFHeobfmwFbug9kupSxhKA1Q&s" alt="Product 3">
+              <div class="info">
+                  <h3>Cakes & Bakes </h3>
+                  <p>Freshly baked cakes, pastries, and cookies, perfect for celebrating special occasions or indulging in a sweet treat.</p>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+  
+          <div class="product">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyizioCCvQ4DSF9yBgXlt_TPRJSz9gH5GhoNvcaIVZyg&s" alt="Product 4">
+              <div class="info">
+                  <h3>Chocolates</h3>
+                  <p>A selection of premium chocolates, including milk, dark, and white chocolates, perfect for gifting or enjoying yourself.</p>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+          <div class="product">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2vJzqfJDJGGYlvjrSbMCP1ora7ZWrYBDWXHXukeoxgA&s" alt="Product 5">
+              <div class="info">
+                  <h3>Dry Fruits</h3>
+                  <p>High-quality dry fruits, such as almonds, cashews, and raisins, packed with nutrients and flavor, ideal for snacking or gifting.</p>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+          <div class="product">
+              <img src="https://img.freepik.com/free-photo/vibrant-collection-healthy-fruit-vegetables-generated-by-ai_24640-80425.jpg" alt="Product 6">
+              <div class="info">
+                  <h3>Fruits</h3>
+                  <p> Fresh, seasonal fruits, carefully selected for their quality and freshness, perfect for adding a healthy touch to your diet</p>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+        </div>
+    </div>
+    <section class="collection">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <h3><button type="View Collection">View Collection</button></h3>
+    </section>
+    <h2 style="font-size: 50px;text-align: center;color: red;">New Arrivals</h2>
+    
+    <div class="container">
+      <div class="products">
+          <div class="product">
+              <img src="https://media.istockphoto.com/id/521803129/photo/gulab-jamun-11.jpg?s=612x612&w=0&k=20&c=wyJaXY7Uu0hMBCXkcTDRaujSKN6Rp9roJeKDvF6CfHI=" alt="Product 1">
+              <div class="info">
+                  <h3>Gulab Jamun</h3>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+          <div class="product">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIpHsX7WsaCHdvhkQqqvV8Dox3femUy7tLdWHUGAFPUw&s" alt="Product 2">
+              <div class="info">
+                  <h3>Red Velvet Cake</h3>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+          <div class="product">
+              <img src="https://layers.pk/wp-content/uploads/2023/10/Pistachio.jpg" alt="Product 3">
+              <div class="info">
+                  <h3>Pistachio Sundae</h3>
+                  <button class="order-now">Order Now</button>
+              </div>
+          </div>
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHebJkQDqS0f99gCOUrIRqhw9xXvNDB6Q0g5c7j-bYag&s" alt="Product 4">
+            <div class="info">
+                <h3>Cookies</h3>
+                <button class="order-now">Order Now</button>
+            </div>
+      </div>
+  </div>
+  
+  <section class="newsletter">
+    <h3>Subscribe to Our Newsletter</h3>
+    <form>
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <section class="testimonials">
+    <h2>Testimonials</h2>
+    <img src="c:\Users\M.FAIZAN\Downloads\WhatsApp Image 2024-03-18 at 22.26.23_8456fa63.jpg" height="60px" width="60" alt="">
+    <p>"Absolutely love the pastries from this bakery! They are always fresh, delicious, and beautifully presented. My go-to place for all things sweet!"<br>
+        "I recently ordered a custom cake for my daughter's birthday, and it was beyond my expectations! Not only did it look stunning, but it tasted amazing too. Thank you for making her day extra special!"<br>
+        "The croissants here are to die for! Perfectly flaky and buttery, just like they should be. I can't resist stopping by every morning for my fix."<br>
+        "I'm gluten-free, and finding good gluten-free baked goods can be a challenge. But this bakery has a fantastic selection of gluten-free options that taste just as good as the regular ones. Thank you for catering to dietary restrictions!"</p>
+  </section>
+</main>
+
+<footer>
+  
+    <div class="logo">
+    <h1>Fazi <span>Bakers</span></h1>
+      </div>
+<div class="container">
+  <div class="footer-column">
+    
+
+  </div>
+  <div class="footer-column">
+    <h3>MAIN MENU</h3>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="About Us.html">About Us</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="Our project.html">Our Projects</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+  <div class="footer-column">
+    
+    <h3>WORK WITH US</h3>
+  </div>
+  <div class="footer-column">
+    <h3>Contact Us</h3><hr>
+    <p><strong>FOR DELIVER CONTACT:</strong>03218895366</p>
+    <p>fazibakers57@gmail.com</p>
+  </div>
+  <div class="footer-column">
+    <h3>Follow Us</h3>
+    <p><a href="https://web.facebook.com/mfaizanikram.mfaizanikram">Follow on FaceBook</a><br>
+     <a href="https://www.instagram.com/faixaan.x1/">Follow on instagram </a> <br>  
+     <a href="https://twitter.com/?lang=en">Follow on Twitter </a>
+    </p>
+    
+  </div>
+</div>
+        <p>&copy; 2024 Your Bakery Name. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
